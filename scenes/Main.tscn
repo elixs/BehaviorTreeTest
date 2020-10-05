@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/godot-behavior-tree-plugin/behavior_tree.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Main.gd" type="Script" id=2]
+[ext_resource path="res://addons/godot-behavior-tree-plugin/blackboard.gd" type="Script" id=3]
+[ext_resource path="res://scripts/TalkAction.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=6]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BehaviorTree" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="BehaviorAction" type="Node" parent="BehaviorTree"]
+script = ExtResource( 4 )
+
+[node name="BehaviorBlackboard" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="Enemy" parent="." instance=ExtResource( 6 )]
+position = Vector2( 109.083, 115.514 )
